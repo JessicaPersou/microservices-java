@@ -1,8 +1,8 @@
 package com.jpersou.productapi.controller;
 
-import com.jpersou.productapi.dto.ProductDTO;
 import com.jpersou.productapi.exception.ProductNotFoundException;
 import com.jpersou.productapi.service.ProductService;
+import com.jpersou.shoppingclient.dto.ProductDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

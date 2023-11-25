@@ -1,14 +1,14 @@
 package com.jpersou.productapi.service;
 
-import com.jpersou.productapi.dto.ProductDTO;
+import com.jpersou.productapi.converter.DTOconverter;
 import com.jpersou.productapi.model.Product;
 import com.jpersou.productapi.repository.ProductRepository;
+import com.jpersou.shoppingclient.dto.ProductDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -23,7 +23,7 @@ public class ProductService {
         List<Product> products = productRepository.findAll();
         return products
                 .stream()
-                .map(ProductDTO::convert)
+                .map(DTOconverter::convert)
                 .collect(Collectors.toList());
     }
 
@@ -31,21 +31,21 @@ public class ProductService {
         List<Product> productList = productRepository.getProductsByCategory(categoryId);
         return productList
                 .stream()
-                .map(ProductDTO::convert)
+                .map(DTOconverter::convert)
                 .collect(Collectors.toList());
     }
 
     public ProductDTO findByProductIdentifier(String productIdentifier){
         Product product = productRepository.findByProductIdentifier(productIdentifier);
         if(product != null){
-            return ProductDTO.convert(product);
+            return DTOconverter.convert(product);
         }
         return null;
     }
 
     public ProductDTO save(ProductDTO productDTO){
         Product product = productRepository.save(Product.convert(productDTO));
-        return ProductDTO.convert(product);
+        return DTOconverter.convert(product);
     }
 
     public void delete(long productId){
@@ -65,13 +65,13 @@ public class ProductService {
         if(productDTO.getPrice() != null){
             product.setPrice(productDTO.getPrice());
         }
-        return ProductDTO.convert(productRepository.save(product));
+        return DTOconverter.convert(productRepository.save(product));
     }
 
     public Page<ProductDTO> getAllPage(Pageable page){
         Page<Product> products = productRepository.findAll(page);
         return products
-                .map(ProductDTO::convert);
+                .map(DTOconverter::convert);
     }
 
 }

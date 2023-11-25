@@ -1,6 +1,6 @@
 package com.jpersou.productapi.model;
 
-import com.jpersou.productapi.dto.ProductDTO;
+import com.jpersou.shoppingclient.dto.ProductDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
