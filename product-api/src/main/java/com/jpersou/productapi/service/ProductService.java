@@ -1,7 +1,10 @@
 package com.jpersou.productapi.service;
 
 import com.jpersou.productapi.converter.DTOconverter;
+import com.jpersou.shoppingclient.exception.CategoryNotFoundException;
+import com.jpersou.shoppingclient.exception.ProductNotFoundException;
 import com.jpersou.productapi.model.Product;
+import com.jpersou.productapi.repository.CategoryRepository;
 import com.jpersou.productapi.repository.ProductRepository;
 import com.jpersou.shoppingclient.dto.ProductDTO;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +20,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProductService {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
+
+    private final CategoryRepository categoryRepository;
 
     public List<ProductDTO> getAll(){
         List<Product> products = productRepository.findAll();
@@ -40,19 +45,24 @@ public class ProductService {
         if(product != null){
             return DTOconverter.convert(product);
         }
-        return null;
+        throw new ProductNotFoundException();
     }
 
     public ProductDTO save(ProductDTO productDTO){
+        Boolean existsCategory = categoryRepository.existsById(productDTO.getCategoryDTO().getId());
+        if(!existsCategory){
+            throw new CategoryNotFoundException();
+        }
         Product product = productRepository.save(Product.convert(productDTO));
         return DTOconverter.convert(product);
     }
 
-    public void delete(long productId){
+    public void delete(long productId) throws ProductNotFoundException{
         Optional<Product> product = productRepository.findById(productId);
         if(product.isPresent()){
             productRepository.delete(product.get());
         }
+        throw new ProductNotFoundException();
     }
 
     public ProductDTO editProduct(long id, ProductDTO productDTO){

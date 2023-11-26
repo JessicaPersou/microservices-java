@@ -1,6 +1,7 @@
 package com.jpersou.shoppingapi.service;
 
 import com.jpersou.shoppingclient.dto.UserDTO;
+import com.jpersou.shoppingclient.exception.UserNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -24,7 +25,7 @@ public class UserService {
             return userDTOMono.block();
 
         }catch (Exception e){
-            throw new RuntimeException("User Not Found");
+            throw new UserNotFoundException();
         }
     }
 }

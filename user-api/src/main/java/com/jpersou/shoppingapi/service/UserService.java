@@ -1,11 +1,11 @@
 package com.jpersou.shoppingapi.service;
 
 import com.jpersou.shoppingapi.converter.DTOconverter;
+import com.jpersou.shoppingclient.exception.UserNotFoundException;
 import com.jpersou.shoppingapi.model.User;
 import com.jpersou.shoppingapi.repository.UserRepository;
 import com.jpersou.shoppingclient.dto.UserDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.web.reactive.function.client.WebClientCustomizer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -51,11 +51,11 @@ public class UserService {
     }
 
     public UserDTO findByDocumentAndKey(String doc, String key){
-        User user = userRepository.findByDocumentAndKey(doc, key);
-        if(user != null){
-            return DTOconverter.convert(user);
-        }
-        return null;
+            User user = userRepository.findByDocumentAndKey(doc, key);
+            if(user != null){
+                return DTOconverter.convert(user);
+            }
+            throw new UserNotFoundException();
     }
 
     public List<UserDTO> queryByName(String name){

@@ -1,7 +1,7 @@
 package com.jpersou.shoppingapi.service;
 
 import com.jpersou.shoppingclient.dto.ProductDTO;
-import com.jpersou.shoppingclient.dto.UserDTO;
+import com.jpersou.shoppingclient.exception.ProductNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -25,7 +25,7 @@ public class ProductService {
             return productDTOMono.block();
 
         }catch (Exception e){
-            throw new RuntimeException("Product Not Found");
+            throw new ProductNotFoundException();
         }
     }
 }

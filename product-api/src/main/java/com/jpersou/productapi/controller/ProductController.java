@@ -1,6 +1,6 @@
 package com.jpersou.productapi.controller;
 
-import com.jpersou.productapi.exception.ProductNotFoundException;
+import com.jpersou.shoppingclient.exception.ProductNotFoundException;
 import com.jpersou.productapi.service.ProductService;
 import com.jpersou.shoppingclient.dto.ProductDTO;
 import jakarta.validation.Valid;
