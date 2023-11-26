@@ -3,10 +3,7 @@ package com.jpersou.shoppingapi.service;
 import com.jpersou.shoppingapi.converter.DTOconverter;
 import com.jpersou.shoppingapi.model.Shop;
 import com.jpersou.shoppingapi.repository.ShopRepository;
-import com.jpersou.shoppingclient.dto.ItemDTO;
-import com.jpersou.shoppingclient.dto.ProductDTO;
-import com.jpersou.shoppingclient.dto.ShopDTO;
-import com.jpersou.shoppingclient.dto.ShopReportDTO;
+import com.jpersou.shoppingclient.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -63,15 +60,9 @@ public class ShopService {
         return null;
     }
 
-    public ShopDTO save(ShopDTO shopDTO){
-
-        if(userService.getUserByDocument(shopDTO.getUserIdentifier()) == null){
-            return null;
-        }
-
-        if(!validateProducts(shopDTO.getItems())){
-            return null;
-        }
+    public ShopDTO save(ShopDTO shopDTO, String key){
+        UserDTO userDTO = userService.getUserByDocument(shopDTO.getUserIdentifier(), key);
+        validateProducts(shopDTO.getItems());
 
         shopDTO.setTotal(shopDTO.getItems()
                 .stream()

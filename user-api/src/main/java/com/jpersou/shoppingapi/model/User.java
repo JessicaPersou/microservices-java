@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity(name = "user")
 public class User {
 
     @Id
@@ -42,7 +42,7 @@ public class User {
         user.setAddress(userDTO.getAddress());
         user.setEmail(userDTO.getEmail());
         user.setPhone(userDTO.getPhone());
-        user.setKey(user.getKey());
+        user.setKey(userDTO.getKey());
         user.setDateRegister(userDTO.getDateRegister());
 
         return user;

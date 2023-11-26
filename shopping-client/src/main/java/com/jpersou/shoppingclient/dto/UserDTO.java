@@ -25,5 +25,4 @@ public class UserDTO {
     private String key;
     private LocalDateTime dateRegister;
 
-
 }

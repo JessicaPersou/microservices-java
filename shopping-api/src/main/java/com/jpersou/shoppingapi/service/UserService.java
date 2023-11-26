@@ -11,14 +11,14 @@ public class UserService {
 
     private String userApiURL = "http://localhost:8080";
 
-    public UserDTO getUserByDocument(String doc){
+    public UserDTO getUserByDocument(String doc, String key){
         try {
             WebClient webClient = WebClient.builder()
                     .baseUrl(userApiURL)
                     .build();
 
             Mono<UserDTO> userDTOMono = webClient.get()
-                    .uri("/user/" + doc + "/document")
+                    .uri("/user/" + doc + "/document?key=" + key)
                     .retrieve()
                     .bodyToMono(UserDTO.class);
 

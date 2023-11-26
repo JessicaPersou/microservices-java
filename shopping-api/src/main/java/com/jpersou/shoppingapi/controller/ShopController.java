@@ -41,8 +41,9 @@ public class ShopController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ShopDTO newShop(@RequestBody @Valid ShopDTO shopDTO){
-        return shopService.save(shopDTO);
+    public ShopDTO newShop( @RequestHeader(name = "key", required = true) String key,
+                            @RequestBody @Valid ShopDTO shopDTO){
+        return shopService.save(shopDTO, key);
     }
 
     @GetMapping("/search")
