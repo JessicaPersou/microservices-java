@@ -8,7 +8,14 @@
         <option value="$PROJECT_DIR$/product-api/pom.xml" />
         <option value="$PROJECT_DIR$/shopping-api/pom.xml" />
         <option value="$PROJECT_DIR$/shopping-client/pom.xml" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="temurin-17" project-jdk-type="JavaSDK">

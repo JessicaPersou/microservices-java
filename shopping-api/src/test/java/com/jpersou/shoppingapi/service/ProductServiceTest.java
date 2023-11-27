@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jpersou.shoppingclient.dto.ProductDTO;
 //import okhttp3.mockwebserver.MockResponse;
 //import okhttp3.mockwebserver.MockWebServer;
+import org.glassfish.jaxb.core.v2.TODO;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,6 +18,7 @@ import java.io.IOException;
 
 @ExtendWith(MockitoExtension.class)
 public class ProductServiceTest {
+// TODO: 26/11/2023 configurar dependência -> okhttp3
 
 //    public static MockWebServer mockBackEnd;
 //

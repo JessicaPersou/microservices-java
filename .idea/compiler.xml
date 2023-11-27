@@ -11,11 +11,17 @@
         <module name="user-api" />
         <module name="shopping-api" />
         <module name="shopping-client" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="product-api" options="-parameters" />
       <module name="shopping-api" options="-parameters" />
       <module name="shopping-client" options="-parameters" />
