@@ -24,7 +24,7 @@ public class ProductController {
         return productService.getAll();
     }
 
-    @GetMapping("/category/{category}")
+    @GetMapping("/category/{categoryId}")
     public List<ProductDTO> getProductByCategory(@PathVariable Long categoryId){
         return productService.getProductByCategoryId(categoryId);
     }
