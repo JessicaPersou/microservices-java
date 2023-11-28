@@ -1,15 +1,14 @@
-package com.jpersou.userapi.service;
+package com.jpersou.shoppingapi.service;
 
-import com.jpersou.userapi.converter.DTOconverter;
-import com.jpersou.shoppingclient.exception.UserNotFoundException;
-import com.jpersou.userapi.model.User;
-import com.jpersou.userapi.repository.UserRepository;
 import com.jpersou.shoppingclient.dto.UserDTO;
+import com.jpersou.shoppingclient.exception.UserNotFoundException;
+import com.jpersou.shoppingapi.converter.DTOconverter;
+import com.jpersou.shoppingapi.model.User;
+import com.jpersou.shoppingapi.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
 
 import java.time.LocalDateTime;
 import java.util.List;

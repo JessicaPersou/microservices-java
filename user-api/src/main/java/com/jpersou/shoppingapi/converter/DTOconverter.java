@@ -1,7 +1,7 @@
-package com.jpersou.userapi.converter;
+package com.jpersou.shoppingapi.converter;
 
 
-import com.jpersou.userapi.model.User;
+import com.jpersou.shoppingapi.model.User;
 import com.jpersou.shoppingclient.dto.UserDTO;
 
 public class DTOconverter {

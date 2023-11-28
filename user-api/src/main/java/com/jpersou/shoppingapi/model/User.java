@@ -1,4 +1,4 @@
-package com.jpersou.userapi.model;
+package com.jpersou.shoppingapi.model;
 
 
 import com.jpersou.shoppingclient.dto.UserDTO;

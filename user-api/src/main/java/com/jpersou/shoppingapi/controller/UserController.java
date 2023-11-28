@@ -1,7 +1,7 @@
-package com.jpersou.userapi.controller;
+package com.jpersou.shoppingapi.controller;
 
 import com.jpersou.shoppingclient.exception.UserNotFoundException;
-import com.jpersou.userapi.service.UserService;
+import com.jpersou.shoppingapi.service.UserService;
 import com.jpersou.shoppingclient.dto.UserDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

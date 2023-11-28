@@ -1,8 +1,8 @@
-package com.jpersou.userapi.controller;
+package com.jpersou.shoppingapi.controller;
 
-import com.jpersou.userapi.converter.DTOconverter;
-import com.jpersou.userapi.service.UserService;
-import com.jpersou.userapi.service.UserServiceTest;
+import com.jpersou.shoppingapi.converter.DTOconverter;
+import com.jpersou.shoppingapi.service.UserService;
+import com.jpersou.shoppingapi.service.UserServiceTest;
 import com.jpersou.shoppingclient.dto.UserDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,18 +22,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-class UserControllerTest {
+public class UserControllerTest {
 
     @InjectMocks
     private UserController userController;
+
     @Mock
     private UserService userService;
+
     private MockMvc mockMvc;
 
+    @BeforeEach
+    public void setup() {
+        mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
+    }
+
     @Test
-    public void testListUsers() throws Exception{
+    public void testListUsers() throws Exception {
         List<UserDTO> users = new ArrayList<>();
-        users.add(DTOconverter.convert(UserServiceTest.getUser(1,"Name 1", "123")));
+        users.add(DTOconverter
+                .convert(UserServiceTest.getUser(1, "User Name", "123")));
 
         Mockito.when(userService.getAll()).thenReturn(users);
 
@@ -43,14 +51,10 @@ class UserControllerTest {
                 .andReturn();
 
         String resp = result.getResponse().getContentAsString();
-        Assertions.assertEquals("[{\"name\":\"Name 1\"," +
-                        "\"document\":\"123\",\"address\":\"Address\",\"phone\":\"5432\",\"email\":null,\"key\":null,\"dateRegister\":null}]"
+        Assertions.assertEquals("[{\"name\":\"User Name\"," +
+                        "\"document\":\"123\",\"address\":\"New Address\",\"phone\":\"5432\",\"email\":null,\"key\":null,\"dateRegister\":null}]"
                 , resp);
     }
 
-    @BeforeEach
-    public void setup(){
-        mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
-    }
 
 }

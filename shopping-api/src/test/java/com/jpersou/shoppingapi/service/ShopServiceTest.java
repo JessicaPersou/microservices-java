@@ -30,7 +30,7 @@ public class ShopServiceTest {
 
 
     @Test
-    public void testSaveShop(){
+    public void test_saveShop(){
         ItemDTO itemDTO = new ItemDTO();
         itemDTO.setProductIdentifier("123");
         itemDTO.setPrice(100F);

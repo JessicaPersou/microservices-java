@@ -1,6 +1,6 @@
-package com.jpersou.userapi.repository;
+package com.jpersou.shoppingapi.repository;
 
-import com.jpersou.userapi.model.User;
+import com.jpersou.shoppingapi.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
