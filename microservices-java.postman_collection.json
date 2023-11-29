@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "57417822-9192-49da-9dce-c5a3438526bc",
+		"name": "Microservices Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19199790"
+	},
+	"item": [
+		{
+			"name": "user-api",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/user"
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "getUsersByDocument",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/111.222.222-11/document?key=60dbc7dc-c82a-4954-a91c-92acb4fd774d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"111.222.222-11",
+								"document"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "60dbc7dc-c82a-4954-a91c-92acb4fd774d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "creatUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Leonardo Sales\",\n    \"document\": \"111.222.222-11\",\n    \"address\": \"Rua Monalisa, 123\",\n    \"phone\": \"(11) 99999-4321\",\n    \"email\": \"leonardo@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/user"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUsersByDocument",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "getByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/search?name=Jessica Pereira",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Jessica Pereira"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatetUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"Rua D\",\n    \"phone\": \"1199999-0000\",\n    \"email\": \"maria@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/user/2"
+					},
+					"response": []
+				},
+				{
+					"name": "getUsersPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/user/pageable"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product-api",
+			"item": [
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/product"
+					},
+					"response": []
+				},
+				{
+					"name": "getProductByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/product/category/1"
+					},
+					"response": []
+				},
+				{
+					"name": "creatProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"productIdentifier\": \"ELE123\",\n        \"name\": \"Monitor Acer\",\n        \"description\": \"Um Monitor 27 polegadas\",\n        \"price\": 1099.99,\n        \"categoryDTO\": {\n            \"id\": 1,\n            \"name\": \"Eletrônico\"\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/product"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8081/product/1"
+					},
+					"response": []
+				},
+				{
+					"name": "getProductIdentifier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/product/BRQ111"
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Smartphone Samsung\",\n    \"description\": \"Um smartphone avançado\",\n    \"price\": 799.99,\n    \"categoryDTO\": {\n        \"id\": 1,\n        \"name\": \"Eletrônico\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/product/1"
+					},
+					"response": []
+				},
+				{
+					"name": "getProductPage",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/product/pageable"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shopping-api",
+			"item": [
+				{
+					"name": "getAllShops",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/shopping"
+					},
+					"response": []
+				},
+				{
+					"name": "getShoppingByUserIdentifier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/shopping/shopByUser/leonardo"
+					},
+					"response": []
+				},
+				{
+					"name": "getShopById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/shopping/000"
+					},
+					"response": []
+				},
+				{
+					"name": "newShop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "key",
+								"value": "60dbc7dc-c82a-4954-a91c-92acb4fd774d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userIdentifier\": \"60dbc7dc-c82a-4954-a91c-92acb4fd774d\",\n  \"items\": [\n      {\n        \"productIdentifier\": \"BRQ222\",\n        \"price\": 14.99\n      },\n      {\n        \"productIdentifier\": \"MOV789\",\n        \"price\": 899.99\n      }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8084/shopping"
+					},
+					"response": []
+				},
+				{
+					"name": "newShopping",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "key",
+								"value": "60dbc7dc-c82a-4954-a91c-92acb4fd774d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_identifier\": \"60dbc7dc-c82a-4954-a91c-92acb4fd774d\",\n  \"date\": \"2023-11-27T15:30:00\",\n  \"total\": 0.0\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8082/shopping"
+					},
+					"response": []
+				},
+				{
+					"name": "getShoppingByDateAndValue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/shopping/search?startDate=01/01/2020&endDate=01/01/2024&minimumValue=50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"shopping",
+								"search"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "01/01/2020"
+								},
+								{
+									"key": "endDate",
+									"value": "01/01/2024"
+								},
+								{
+									"key": "minimumValue",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getShoppingByDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/shopping/search?startDate=01/01/2020&endDate=01/01/2024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"shopping",
+								"search"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "01/01/2020"
+								},
+								{
+									"key": "endDate",
+									"value": "01/01/2024"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
