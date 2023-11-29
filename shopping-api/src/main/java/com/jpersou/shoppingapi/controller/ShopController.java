@@ -1,6 +1,6 @@
-package com.jpersou.userapi.controller;
+package com.jpersou.shoppingapi.controller;
 
-import com.jpersou.userapi.service.ShopService;
+import com.jpersou.shoppingapi.service.ShopService;
 import com.jpersou.shoppingclient.dto.ShopDTO;
 import com.jpersou.shoppingclient.dto.ShopReportDTO;
 import jakarta.validation.Valid;

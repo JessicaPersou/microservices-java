@@ -1,4 +1,4 @@
-package com.jpersou.userapi.exception.advice;
+package com.jpersou.shoppingapi.exception.advice;
 
 import com.jpersou.shoppingclient.dto.ErrorDTO;
 import com.jpersou.shoppingclient.exception.CategoryNotFoundException;

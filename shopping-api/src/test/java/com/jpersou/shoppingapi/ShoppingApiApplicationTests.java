@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @Disabled("Desabilitando testes")
 @SpringBootTest
-class ShoppingApiApplicationTest {
+class ShoppingApiApplicationTests {
 
     @Test
     void contextLoads() {

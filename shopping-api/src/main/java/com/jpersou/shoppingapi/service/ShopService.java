@@ -1,9 +1,9 @@
-package com.jpersou.userapi.service;
+package com.jpersou.shoppingapi.service;
 
 import com.jpersou.shoppingclient.exception.ProductNotFoundException;
-import com.jpersou.userapi.converter.DTOconverter;
-import com.jpersou.userapi.model.Shop;
-import com.jpersou.userapi.repository.ShopRepository;
+import com.jpersou.shoppingapi.converter.DTOconverter;
+import com.jpersou.shoppingapi.model.Shop;
+import com.jpersou.shoppingapi.repository.ShopRepository;
 import com.jpersou.shoppingclient.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

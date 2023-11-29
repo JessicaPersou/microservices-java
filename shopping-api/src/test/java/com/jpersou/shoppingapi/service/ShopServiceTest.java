@@ -1,7 +1,7 @@
-package com.jpersou.userapi.service;
+package com.jpersou.shoppingapi.service;
 
-import com.jpersou.userapi.model.Shop;
-import com.jpersou.userapi.repository.ShopRepository;
+import com.jpersou.shoppingapi.model.Shop;
+import com.jpersou.shoppingapi.repository.ShopRepository;
 import com.jpersou.shoppingclient.dto.ItemDTO;
 import com.jpersou.shoppingclient.dto.ProductDTO;
 import com.jpersou.shoppingclient.dto.ShopDTO;

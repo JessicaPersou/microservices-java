@@ -1,7 +1,7 @@
-package com.jpersou.userapi.repository.impl;
+package com.jpersou.shoppingapi.repository.impl;
 
-import com.jpersou.userapi.model.Shop;
-import com.jpersou.userapi.repository.ReportRepository;
+import com.jpersou.shoppingapi.model.Shop;
+import com.jpersou.shoppingapi.repository.ReportRepository;
 import com.jpersou.shoppingclient.dto.ShopReportDTO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

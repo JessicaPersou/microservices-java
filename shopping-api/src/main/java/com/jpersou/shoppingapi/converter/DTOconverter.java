@@ -1,8 +1,8 @@
-package com.jpersou.userapi.converter;
+package com.jpersou.shoppingapi.converter;
 
 
-import com.jpersou.userapi.model.Item;
-import com.jpersou.userapi.model.Shop;
+import com.jpersou.shoppingapi.model.Item;
+import com.jpersou.shoppingapi.model.Shop;
 import com.jpersou.shoppingclient.dto.ItemDTO;
 import com.jpersou.shoppingclient.dto.ShopDTO;
 

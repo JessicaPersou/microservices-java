@@ -1,4 +1,4 @@
-package com.jpersou.userapi.service;
+package com.jpersou.shoppingapi.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jpersou.shoppingclient.dto.ProductDTO;
